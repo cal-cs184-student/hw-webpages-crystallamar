@@ -127,10 +127,10 @@
 
 		<h3>Part 3: Area-weighted vertex normals</h3>
 		<p>
-			To compute area-weighted vertex normals, I iterate through all triangles surrounding a given vertex using the half-edge data structure. Starting from the vertex's halfedge, I rotate around the vertex by repeatedly calling <code>twin()->next()</code>, visiting each neighboring triangle.
+			To compute area-weighted vertex normals, I iterated through all triangles surrounding a given vertex using the half-edge data structure. Starting from the vertex's halfedge, I rotated around the vertex by repeatedly calling <code>twin()->next()</code>, visiting each neighboring triangle.
 		</p>
 		<p>
-			For each triangle, I retrieve the positions of its three vertices and compute two edge vectors (p1 - p0) and (p2 - p0), then take their cross product. This produces a vector perpendicular to the triangle whose magnitude equals twice the triangle's area — providing area-weighting automatically without any extra computation. I accumulate these cross products into a running sum, then normalize with <code>.unit()</code> at the end to return a unit-length normal vector.
+			For each triangle, I then retrieved the positions of its three vertices and computed two edge vectors (p1 - p0) and (p2 - p0), then took their cross product. This produced a vector perpendicular to the triangle whose magnitude equaled twice the triangle's area — providing area-weighting automatically without any extra computation. I accumulated these cross products into a running sum, then normalized with <code>.unit()</code> at the end to return a unit-length normal vector.
 		</p>
 
 		<div style="display: flex; flex-direction: column; align-items: center;">
